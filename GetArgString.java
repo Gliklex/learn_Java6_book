@@ -4,7 +4,7 @@
       Запустите программу и посмотрите, будут ли выводиться сообщения при вызове конструкторов.
   (1) Завершите предыдущее упражнение — создайте объекты, которыми заполняется массив ссылок.*/
 public class GetArgString {
-    public GetArgString(String sArg){
+    public GetArgString(String sArg) {
         System.out.println(sArg);
     }
 
