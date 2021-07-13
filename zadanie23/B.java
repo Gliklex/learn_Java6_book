@@ -2,7 +2,7 @@ package zadanie23;
 
 /*
 (4) Создайте интерфейс и с тремя методами.
- Создайте класс А с методом, который создает ссылку на и посредством построения анонимного внутреннего класса.
+ Создайте класс А с методом, который создает ссылку на U посредством построения анонимного внутреннего класса.
   Создайте второй класс В, который содержит массив U.
   Класс в содержит один метод, который получает и сохраняет ссылку на U в массиве;
   второй метод, который сбрасывает ссылку в массиве (определяемую аргументом метода) в состояние null;
@@ -35,25 +35,25 @@ class B {
         }
     }
 
-    void getU() {
+    void call() {
         for (U u : mass) {
-            u.methodUno();
-            u.methodDos();
-            u.methodTres();
+            if (u != null) {
+                u.methodUno();
+                u.methodDos();
+                u.methodTres();
+            }
         }
     }
 
     public static void main(String[] args) {
         B b = new B(3);
-        A a1 = new A();
-        A a2 = new A();
-        A a3 = new A();
-
+        A a1 = new A("a1");
+        A a2 = new A("a2");
         b.methodSaveLink(a1.methodRetU());
         b.methodSaveLink(a2.methodRetU());
-        b.methodSaveLink(a3.methodRetU());
-        b.getU();
+        b.methodSaveLink(a2.methodRetU());
+        b.call();
         b.resetLink(b.mass[1]);
-        System.out.println(b.mass[2]);
+        b.call();
     }
 }
