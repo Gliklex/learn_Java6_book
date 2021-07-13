@@ -13,8 +13,6 @@ package zadanie23;
    Удалите некоторые ссылки на U из B.
  */
 
-import zadanie22.Sequence;
-
 class B {
     private final U[] mass;
     private int i;
@@ -30,8 +28,10 @@ class B {
     }
 
     void resetLink(U u) {
-        if (mass[i - 1] == u) {
-            mass[i - 1] = null;
+        for (int i = 0; i < mass.length; i++) {
+            if (mass[i] == u) {
+                mass[i] = null;
+            }
         }
     }
 
@@ -53,7 +53,7 @@ class B {
         b.methodSaveLink(a2.methodRetU());
         b.methodSaveLink(a3.methodRetU());
         b.getU();
-        b.resetLink(a2.methodRetU());
+        b.resetLink(b.mass[1]);
         System.out.println(b.mass[2]);
     }
 }
